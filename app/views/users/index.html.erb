@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All users</h1>
+
+    <% @users.each do |user| %>
+      <p><strong><%= user.email %></strong><br>
+        Became a member on <%= user.created_at %><br>
+        Last seen on <%= user.last_sign_in_at %>
+      </p>
+      <p>Articles by <%= user.email %>:</p>
+      <ul>
+          <% user.articles.each do |article| %>
+
+            <li><%= link_to article.title, article %></li>
+          <% end %>
+      </ul>
+    <% end %>
+
+

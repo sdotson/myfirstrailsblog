@@ -1,0 +1,16 @@
+<p>
+  <strong>Comment by: </strong>
+  <%= comment.name %>
+</p>
+ 
+<p>
+  <%= comment.body %>
+</p>
+ 
+<p>
+<% if user_signed_in? %>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+<% end %>
+</p>
